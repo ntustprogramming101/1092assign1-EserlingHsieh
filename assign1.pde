@@ -4,7 +4,8 @@ PImage life;
 PImage robot;
 PImage soil;
 PImage soldier;
-int soldierLevel,soldierX;
+int soldierLevel;
+float soldierX;
 int robotLevel,robotX;
 int laserX,laserWidth;
 
@@ -53,7 +54,7 @@ void draw() {
   image(groundhog,280,80);
 
   //soldier walk
-  soldierX=(soldierX+4);
+  soldierX=(soldierX+640/120);
   image(soldier,soldierX%720-80,soldierLevel); 
   
   image(robot,robotX,robotLevel);
@@ -61,9 +62,9 @@ void draw() {
   //laser shot
   strokeWeight(10);
   stroke(#FF0000);
-  line(laserX,robotLevel+37,laserX-laserWidth,robotLevel+37);
-  laserX=laserX-2; //Max:laserX-150
-  laserWidth=min(laserWidth+1,30);
+  line(laserX,robotLevel+37,laserX+laserWidth,robotLevel+37);
+  laserX=laserX-2; 
+  laserWidth=min(laserWidth+2,30);
   
   if(robotX-laserX>125){
   laserX=robotX+25;

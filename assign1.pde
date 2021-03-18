@@ -37,8 +37,8 @@ void draw() {
   image(bg,0,0);
   image(soil,0,160);
   image(life,10,10);
-  image(life,81,10);
-  image(life,152,10);
+  image(life,80,10);
+  image(life,150,10);
   
   //draw ground
   noStroke();
